@@ -23,14 +23,7 @@ class TranslationService:
         self.service_type = self.config.get("translation_service", "openai")
     
     def load_config(self, config_path: str) -> Dict[str, Any]:
-        """加载配置文件
-        
-        参数:
-            config_path (str): 配置文件路径
-            
-        返回:
-            Dict[str, Any]: 配置字典
-        """
+
         try:
             with open(config_path, 'r', encoding='utf-8') as f:
                 return json.load(f)
@@ -48,15 +41,7 @@ class TranslationService:
             }
     
     def translate(self, text: str, target_lang: str = "中文") -> str:
-        """翻译文本
-        
-        参数:
-            text (str): 需要翻译的文本
-            target_lang (str): 目标语言
-            
-        返回:
-            str: 翻译后的文本
-        """
+
         if self.service_type == "openai":
             return self.translate_with_openai(text, target_lang)
         elif self.service_type == "local_llm":
@@ -65,15 +50,7 @@ class TranslationService:
             return f"不支持的翻译服务: {self.service_type}"
     
     def translate_with_openai(self, text: str, target_lang: str) -> str:
-        """使用OpenAI API进行翻译
-        
-        参数:
-            text (str): 需要翻译的文本
-            target_lang (str): 目标语言
-            
-        返回:
-            str: 翻译后的文本
-        """
+
         try:
             import openai
             
@@ -99,15 +76,7 @@ class TranslationService:
             return f"OpenAI翻译错误: {str(e)}\n原文: {text}"
     
     def translate_with_local_llm(self, text: str, target_lang: str) -> str:
-        """使用本地部署的大语言模型进行翻译
-        
-        参数:
-            text (str): 需要翻译的文本
-            target_lang (str): 目标语言
-            
-        返回:
-            str: 翻译后的文本
-        """
+
         try:
             service_config = self.config["services"]["local_llm"]
             api_endpoint = service_config.get("api_endpoint", "http://localhost:8000/v1/chat/completions")
@@ -146,17 +115,7 @@ class TranslationService:
             return f"本地LLM翻译错误: {str(e)}\n原文: {text}"
 
 
-# 为方便使用，提供一个便捷函数
 def translate_text(text: str, target_lang: str = "中文", config_path: str = "config.json") -> str:
-    """翻译文本的便捷函数
-    
-    参数:
-        text (str): 需要翻译的文本
-        target_lang (str): 目标语言
-        config_path (str): 配置文件路径
-        
-    返回:
-        str: 翻译后的文本
-    """
+
     service = TranslationService(config_path)
     return service.translate(text, target_lang)
