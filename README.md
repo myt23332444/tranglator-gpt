@@ -2,7 +2,7 @@
 
 ![版本](https://img.shields.io/badge/版本-1.0.0-blue.svg)
 ![Python](https://img.shields.io/badge/Python-3.7+-green.svg)
-![平台](https://img.shields.io/badge/平台-Windows%20|%20macOS%20|%20Linux-lightgrey.svg)
+![平台](https://img.shields.io/badge/平台-Windows%20.svg)
 
 一款桌面翻译工具，支持截图和选中，使用大语言模型进行翻译。
 
