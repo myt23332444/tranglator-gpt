@@ -1,0 +1,23 @@
+{
+    "translation_service": "openai",
+    "services": {
+        "openai": {
+            "model": "gpt-3.5-turbo",
+            "temperature": 0.3,
+            "api_endpoint": "https://api.openai.com/v1/chat/completions"
+        },
+        "local_llm": {
+            "model": "model_name",
+            "temperature": 0.3,
+            "api_endpoint": "http://localhost:8000/v1/chat/completions"
+        }
+    },
+    "ocr": {
+        "tesseract_path": "",
+        "languages": ["eng", "chi_sim", "jpn", "kor"]
+    },
+    "hotkeys": {
+        "screenshot": "ctrl+alt+s",
+        "selection": "ctrl+alt+t"
+    }
+}
