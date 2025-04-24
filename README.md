@@ -4,7 +4,7 @@
 ![Python](https://img.shields.io/badge/Python-3.7+-green.svg)
 ![平台](https://img.shields.io/badge/平台-Windows%20|%20macOS%20|%20Linux-lightgrey.svg)
 
-一款功能强大的桌面翻译工具，支持截图翻译和选中翻译，使用大语言模型进行高质量翻译。
+一款桌面翻译工具，支持截图和选中，使用大语言模型进行翻译。
 
 <div align="center">
   <img src="docs/screenshot.png" alt="AI翻译工具截图" width="600"/>
@@ -30,8 +30,8 @@
 ### 1. 克隆仓库
 
 ```bash
-git clone https://github.com/yourusername/ai-translator.git
-cd ai-translator
+git clone ...
+cd ...
 ```
 
 ### 2. 安装依赖
@@ -47,15 +47,6 @@ pip install -r requirements.txt
 2. 安装时记录下安装路径
 3. 在程序设置中设置 Tesseract 路径
 
-#### macOS
-```bash
-brew install tesseract
-```
-
-#### Linux
-```bash
-sudo apt install tesseract-ocr
-```
 
 ### 4. 设置API密钥
 
@@ -107,7 +98,7 @@ python run.py
 - **翻译后端**: OpenAI API / 自定义LLM API
 - **全局热键**: keyboard
 
-## 📄 项目结构
+## 📄 项目结构（目前功能并不完善）
 
 ```
 ai-translator/
@@ -148,13 +139,10 @@ ai-translator/
 - [ ] 提供更多自定义主题
 - [ ] 优化OCR识别准确率
 
-## 📝 许可证
 
-MIT © [你的名字]
 
 ## 🙏 致谢
 
 - [OpenAI](https://openai.com/) - 提供高质量翻译API
 - [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) - OCR引擎
 - [PyQt5](https://www.riverbankcomputing.com/software/pyqt/) - GUI框架
-- 所有开源贡献者和测试用户
